@@ -1,0 +1,26 @@
+BINARY EXPONENTIATION ITERATIVE
+===============================
+
+EXPLANATION
+-----------
+Let the exponent is expressed in the expanded form in base 2 as exp=exp_{n-1}
+exp_{n-2} exp_{n-3} ... exp_3 exp_2 exp_1 exp_0 where exp_j denotes the
+jth bit of the exp starting from least significant to most significant bit
+using zero based indexing, each bit can be 0 or 1.
+The net result
+num^exp=num^(exp_{n-1}*2^{n-1}+exp_{n-2}*2^{n-2}+ ... +exp_1*2^1+exp_0*2^0)
+This product can be split to product of n individual terms.
+num^exp=num^{exp_{n-1}*2^{n-1}}*num^{exp_{n-2}*2^{n-2}}*...*num^{exp_0*2^0}
+If jth bit is zero then jth term boils down to 1 otherwise, i.e., the jth bit
+is one then the num^{2^j} this can be obtained by performing square of the
+result starting from num j times.
+
+IMPLEMENATION
+-------------
+num variable hold the result of squaring the num as many times as index of
+the rightmost bit in exp. The bits in exp are shifted right once in each
+iteration the num is squared and result is put in num again in each iteration.
+The variable res is initialied with 1, of type long long in our case, and the
+num^{2^j} is multiplied to the res if jth bit is set in exp. This makes the
+calculation of power work in logarithmic time.
+

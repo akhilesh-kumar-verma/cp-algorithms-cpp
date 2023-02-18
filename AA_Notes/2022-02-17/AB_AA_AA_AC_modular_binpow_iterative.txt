@@ -1,0 +1,15 @@
+MODULAR BINARY EXPONENTIATION
+=============================
+
+EXPLANATION
+-----------
+This utilized the property of modulus that it can be distributed over product
+so the results of every multiplication are stored/ used after performing the
+modulus operation.
+
+IMPLEMENTATION
+--------------
+For safe running of program the mod is desired to be lesser than or equal to
+the max number the structure can hold. In our case long long and square root
+is long.
+

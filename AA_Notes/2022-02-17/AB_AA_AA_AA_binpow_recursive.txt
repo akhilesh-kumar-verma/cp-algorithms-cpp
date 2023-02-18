@@ -1,0 +1,23 @@
+BINARY EXPONENTIATION RECURSIVE
+===============================
+
+EXPLANATION
+-----------
+Exponentiation can be done in logarithmic order of the exponent. The basic
+idea of the approach is to use the identity the power(num,
+2*exp)=square(power(num, exp)) using this the number of multiplications reduce
+by exp-1 multiplications.
+The recursive function is defined in the following way:
+pow(num, exp) = 1: exp=0
+pow(num, exp) = square(pow(num, exp/2)): exp is even
+pow(num, exp) = square(pow(num, (exp-1)/w))*num: exp is odd
+
+IMPLEMENTATION
+--------------
+In the base case if the exp is zero, then one is returned. In non trivial case
+the power of num to floor(exp/2) is calculated. If the exp is even then square
+of the pre-calculated value is returned otherwise square multiplied by the num
+is returned. As an implementation detail the mod is calculated by bitwise
+anding the exp with 1. All the comparison and constants are declared as long
+long.
+
