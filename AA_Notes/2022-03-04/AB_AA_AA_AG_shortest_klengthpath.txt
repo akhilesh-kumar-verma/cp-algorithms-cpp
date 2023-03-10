@@ -1,0 +1,15 @@
+SHORTEST K-LENGTH-PATH
+======================
+
+EXPLANATION
+-----------
+This is same as counting number of ways instead of matrix multiplication the
+goal is to find smallest way through any node so that it gives smaller route.
+
+IMPLEMENTATION
+--------------
+Initially, the matrix is filled with maximum possible values. If any of path
+has one edge equal to this max value we skip that path as it is not possible
+to get better path but has a risk of overflow. In all other cases the
+innermost loop takes care of the minimum finding procedure.
+

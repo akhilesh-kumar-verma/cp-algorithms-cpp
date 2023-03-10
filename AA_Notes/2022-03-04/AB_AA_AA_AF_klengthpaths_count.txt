@@ -1,0 +1,9 @@
+K-LENGTH-PATHS COUNT
+====================
+
+EXPLANATION
+-----------
+#paths of length n+m from i to j=sum (#paths of length m from i to k*#paths of
+length n from k to j) over all possible k. If we raise the adjacency matrix to
+power k we will get this soln.
+

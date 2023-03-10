@@ -1,0 +1,25 @@
+K TIMES PERMUTATIONS
+====================
+
+EXPLANATION
+-----------
+The crux of the solution is appling same permutation twice to a sequence is
+same as appling the permutation to itself once and then apply the result to
+the sequence. The second thing that makes it possible is that the appling a
+permutation n+m times to the sequence is equivalent to appling the permutation
+m times to sequence and appling the permuation n times to the resulting
+sequence.
+Once these two points are clear. The binary exponentiation might be visible in
+the solution. We keep sequence and the permutation. The number of times
+permuation is to be applied is again considered as binary number. If the bit
+is set then the present permutation is applied to the present sequence and the
+new sequence is stored back in place of sequence, permutaion is applied to
+itself every time to get 2nth permutation.
+
+IMPLEMENTATION
+--------------
+While appling the permutation the new sequence is first stored in a different
+vector as inplace modification leads to conflict that the value we are looking
+might be overwritten in most of cases. Later the result is stored in the
+initial variable.
+

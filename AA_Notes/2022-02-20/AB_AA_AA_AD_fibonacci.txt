@@ -1,0 +1,33 @@
+FIBONACCI NUMBER
+================
+
+EXPLANATION
+-----------
+We know that the f(n)=f(n-1)+f(n-2). We can represent this in the matrix form
+as following
+f(n)	1 1	f(n-1)
+f(n-1)	1 0	f(n-2)
+If we recursively, reduce the rightmost column until we end with f(1), f(0).
+This will end having n-1 power for the matrix in the middle. So, if the n is
+more than 2, we will raise the matrix to power n-1 and the nth element will be
+given by multipling the first row of resulted matrix with vector f(1), f(0).
+In the other case, when n<2, then we can directly return the base case value.
+
+IMPLEMENTATION
+--------------
+It is like the rest of implementations of the binary exponentiation the
+difference is we do matrix multiplication is done instead of the algebriac
+multiplication. The result is initialized with identity matrix of same order
+rather than 1.
+
+The matrix multiplication is done using 3 nested loops. The result is
+initialized with all zeros in matrix of suitable size. The first loop iterates
+over every row number of the result matrix. The second loop iterate over the
+column of the result matrix and the final loop adds to the element
+corresponding to the row and column the partial products, i.e., for ith row
+and jth column kth product is X[i][k]*Y[k][j], here X is the prematrix and Y
+is the postmatrix.
+
+However, due to some unknown reason in the code if I am using modular
+arithmatic the result is wrong.
+
